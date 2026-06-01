@@ -1,0 +1,185 @@
+/* Подвал: навигация, подписка, контакты, копирайт. */
+
+.footer {
+  background-color: var(--color-text);
+  color: #fff;
+  padding-block: var(--space-9) var(--space-5);
+  margin-top: var(--space-9);
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: var(--space-7);
+  padding-bottom: var(--space-7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.footer__logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+}
+
+.footer__description {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 320px;
+}
+
+.footer__col-title {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--fs-small);
+  transition: color var(--transition-fast);
+}
+
+.footer__nav-link:hover,
+.footer__nav-link:focus-visible {
+  color: #fff;
+}
+
+/* ── Форма подписки ── */
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.subscribe__title {
+  font-size: var(--fs-body);
+  font-weight: 700;
+}
+
+.subscribe__hint {
+  font-size: var(--fs-small);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.subscribe__form {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.subscribe__input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: var(--fs-small);
+  transition: border-color var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+.subscribe__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.subscribe__input:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.subscribe__button {
+  padding: 10px 18px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  transition: background-color var(--transition-fast);
+}
+
+.subscribe__button:hover,
+.subscribe__button:focus-visible {
+  background-color: var(--color-primary-hover);
+}
+
+/* ── Контакты и социальные сети ── */
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer__contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--fs-small);
+}
+
+.footer__contact-link:hover,
+.footer__contact-link:focus-visible {
+  color: #fff;
+}
+
+.footer__socials {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ── Нижний блок: копирайт и юр. ссылки ── */
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--fs-tiny);
+}
+
+.footer__legal-list {
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}

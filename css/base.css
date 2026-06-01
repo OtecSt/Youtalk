@@ -1,0 +1,138 @@
+/* Базовая типографика, контейнер, утилитные классы. */
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p {
+  color: var(--color-text-muted);
+}
+
+a {
+  transition: color var(--transition-fast);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-primary);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── Контейнер ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* ── Кнопки ── */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              transform var(--transition-fast);
+  cursor: pointer;
+}
+
+.button_primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.button_primary:hover,
+.button_primary:focus-visible {
+  background-color: var(--color-primary-hover);
+  color: #fff;
+}
+
+.button_outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.button_outline:hover,
+.button_outline:focus-visible {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/* ── Теги (фильтр) ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast);
+  cursor: pointer;
+}
+
+.tag:hover,
+.tag_active {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ── Иконки ── */
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.icon_sm { width: 16px; height: 16px; }
+.icon_lg { width: 32px; height: 32px; }
+
+/* ── Декоративные секции с фоном ── */
+.section_alt {
+  background-color: var(--color-bg-alt);
+}

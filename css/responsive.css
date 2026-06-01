@@ -1,0 +1,138 @@
+/* Все медиа-запросы централизованно. Брейкпоинты:
+   ── tablet:  768–1199px
+   ── mobile:  ≤ 767px
+*/
+
+/* ── Tablet (≤ 1199px) ── */
+@media (max-width: 1199px) {
+  .articles__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  .article__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+
+  .intro__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .intro__media {
+    order: -1;
+    max-width: 480px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+/* ── Mobile (≤ 767px) ── */
+@media (max-width: 767px) {
+  :root {
+    --space-9: 56px;
+    --container-padding: 16px;
+  }
+
+  /* Header: показываем бургер, скрываем плоское меню */
+  .header__nav {
+    display: none;
+  }
+
+  .header__cta {
+    display: none;
+  }
+
+  .header__burger {
+    display: inline-flex;
+  }
+
+  /* Открытое меню — overlay */
+  .header_menu-open .header__nav {
+    display: block;
+    position: absolute;
+    top: 100%;
+    inset-inline: 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-5) var(--container-padding);
+    box-shadow: var(--shadow-card);
+  }
+
+  .header_menu-open .header__nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+
+  .header_menu-open .header__nav-link {
+    font-size: 1.125rem;
+  }
+
+  .header_menu-open .header__cta {
+    display: inline-flex;
+    margin-top: var(--space-3);
+    width: 100%;
+  }
+
+  /* Articles */
+  .articles__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .articles__header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  /* Footer */
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .subscribe__form {
+    flex-direction: column;
+  }
+
+  /* Article aside на mobile — над текстом или под текстом, в одну колонку */
+  .aside {
+    grid-template-columns: 1fr;
+  }
+
+  /* Intro */
+  .intro {
+    padding-block: var(--space-7) var(--space-6);
+  }
+
+  /* Body статьи */
+  .article__title {
+    font-size: 2rem;
+  }
+}
+
+/* ── Очень узкие экраны (≤ 360px) — экстра ── */
+@media (max-width: 360px) {
+  .header__inner {
+    min-height: 56px;
+  }
+
+  .header__logo span {
+    display: none;
+  }
+}

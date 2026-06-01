@@ -1,0 +1,114 @@
+/* Шапка сайта: лого, навигация, CTA, бургер. */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  gap: var(--space-5);
+}
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.header__logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+}
+
+.header__nav {
+  flex: 1;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+  justify-content: center;
+}
+
+.header__nav-link {
+  position: relative;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  padding-block: 4px;
+  transition: color var(--transition-fast);
+}
+
+.header__nav-link:hover,
+.header__nav-link:focus-visible,
+.header__nav-link_active {
+  color: var(--color-primary);
+}
+
+/* Подчёркивание под активным/hover-пунктом — псевдоэлемент */
+.header__nav-link::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-base);
+}
+
+.header__nav-link:hover::after,
+.header__nav-link_active::after {
+  transform: scaleX(1);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ── Бургер ── */
+.header__burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.header__burger:hover {
+  background-color: var(--color-bg-alt);
+}
+
+.header__burger-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.header__burger-icon_close {
+  display: none;
+}
+
+/* Состояние «меню открыто» */
+.header_menu-open .header__burger-icon_open {
+  display: none;
+}
+.header_menu-open .header__burger-icon_close {
+  display: block;
+}
