@@ -55,15 +55,15 @@ python3 -m http.server 8000
 ### 1. Картинки
 
 Файлы плейсхолдеров:
-- `images/placeholder-hero.svg` — иллюстрация в hero на главной.
-- `images/placeholder-card.svg` — обложки карточек статей и обложка статьи.
-- `images/placeholder-thumb.svg` — миниатюры в `aside` на странице article.
+- `images/placeholder-hero.png` — иллюстрация в hero на главной.
+- `images/placeholder-card.png` — обложки карточек статей и обложка статьи.
+- `images/placeholder-thumb.png` — миниатюры в `aside` на странице article.
 
 **Что сделать:**
 1. Откройте макет в Figma.
 2. Экспортируйте картинки в формате **PNG** (по требованию ТЗ).
 3. Сохраните их в папку `images/` с понятными именами (например, `hero.png`, `article-1.png`, `article-2.png`).
-4. В `index.html` и `article.html` замените `src="images/placeholder-*.svg"` на нужные файлы. Также обновите `alt` на осмысленный.
+4. В `index.html` и `article.html` замените `src="images/placeholder-*.png"` на нужные файлы. Также обновите `alt` на осмысленный.
 
 ### 2. SVG-иконки
 
